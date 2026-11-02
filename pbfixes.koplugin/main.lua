@@ -357,7 +357,7 @@ local function hookGyroEvents()
     local original = input.handleMiscGyroEv
     local function logged(self, ev)
         local inkview = getInkView()
-        local app, sensor
+        local app, _, sensor
         if inkview then
             app, _, sensor = inkviewState(inkview)
         end
@@ -584,7 +584,9 @@ If your device already swaps the buttons by itself, this makes them swap twice: 
         end
         menu_items.pbfixes_orientation = {
             text = _("Fix orientation when started upside down"),
-            sorting_hint = "screen_rotation",
+            -- Not "screen_rotation": that menu builds its items in
+            -- sub_item_table_func, so an item sorted into it never shows.
+            sorting_hint = "screen",
             help_text = _([[On some PocketBook devices (Era, Era Color, Era Lite), KOReader started while the device is held upside down shows everything upside down, and turning the device does not put it right.
 
 "Compensate" folds the firmware's 180° offset into KOReader's own rotation. "Reset InkView" asks the firmware to show the screen upright instead. "Off" only logs what the firmware reports. Takes effect at the next start. "Ignore accelerometer rotation events" and "Lock auto rotation" are honoured.]]),

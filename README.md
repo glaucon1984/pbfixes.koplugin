@@ -109,9 +109,9 @@ The toggles are available in the file browser and in the reader:
 - *Settings → Navigation* → **Page-turn buttons follow rotation** (default on
   for the Era Lite, off elsewhere). Off restores the device's own rotation
   map. Acts at once.
-- *Settings → Screen → Rotation* → **Fix orientation when started upside
-  down** (default *Compensate* for the Era, Era Color and Era Lite, *Off* on
-  other PocketBooks). Takes effect at the next start.
+- *Settings → Screen* → **Fix orientation when started upside down** (default
+  *Compensate* for the Era, Era Color and Era Lite, *Off* on other
+  PocketBooks). Takes effect at the next start.
 
 ## How it works
 
